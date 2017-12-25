@@ -41,8 +41,8 @@ def save_image(data_np,save_dir,name="test"):
     # plt.imshow(np.squeeze(images_np), cmap='gray')
     img_to_save = str(name) + ".png"
     img_path = os.path.join(save_dir,img_to_save)
+    data_np = (1/(2*2.25)) * data_np + 0.5
     plt.imsave(img_path,np.squeeze(data_np))
-
 
 def evaluate_tfgan_loss(gan_loss, name=None):
     """Evaluate GAN losses. Used to check that the graph is correct.
